@@ -1,11 +1,13 @@
 # Video streaming battery rundown test methodology 
 
-Brandon Heenan
-Program Manager, Microsoft Edge
+Brandon Heenan<br>
+_Program Manager, Microsoft Edge_
 
 ## Summary
 
-We measured the time it took four identical Surface Book laptops to run fully through their batteries while streaming video. The results were recorded with a camera and a [time lapse](https://www.youtube.com/watch?v=rjrxOOfi54k) was made available publicly.
+We measured the time it took four identical Surface Book laptops to run fully through their batteries while streaming video. The results were recorded with a camera and a time lapse was made available publicly:
+
+[![Battery tests on streaming video comparing Google Chrome, Mozilla Firefox, and Opera.](https://img.youtube.com/vi/rjrxOOfi54k/hqdefault.jpg)](https://www.youtube.com/watch?v=rjrxOOfi54k)
 
 The results showed that Microsoft Edge (7:22:07) lasted: 
 * 70% longer than Google Chrome (4:19:50) 
@@ -40,10 +42,10 @@ The specific versions of the browsers tested were:
 
 | Browser | Version |
 | ------- | ------- |
-| Edge | Microsoft Edge 25.10586.0.0, Microsoft EdgeHTML 13.10586, “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586” |
-| Chrome | Google Chrome 51.0.2704.63 m (64 bit), “Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36” |
-| Firefox | Mozilla Firefox 46.0.1, Mozilla83 – 1.0, “Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0” |
-| Opera | Opera 38.0 38.0.2220.29, “Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36 OPR/38.0.2220.29”, Power saver enabled |
+| Edge | Microsoft Edge 25.10586.0.0<br>Microsoft EdgeHTML 13.10586<br>“Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586” |
+| Chrome | Google Chrome 51.0.2704.63 m (64 bit)<br>“Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36” |
+| Firefox | Mozilla Firefox 46.0.1<br>Mozilla83 – 1.0<br>“Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0” |
+| Opera | Opera 38.0 38.0.2220.29<br>“Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36 OPR/38.0.2220.29”<br>Power saver enabled |
 
 ## Pre-Test
 
