@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Videotest by MicrosoftEdge</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Videotest</h1>
+        <p>Video streaming battery rundown test methodology </p>
+
+        <p class="view"><a href="https://github.com/MicrosoftEdge/videotest">View the Project on GitHub <small>MicrosoftEdge/videotest</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/MicrosoftEdge/videotest/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/MicrosoftEdge/videotest/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/MicrosoftEdge/videotest">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="video-streaming-battery-rundown-test-methodology" class="anchor" href="#video-streaming-battery-rundown-test-methodology" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Video streaming battery rundown test methodology</h1>
+
+<p>Brandon Heenan<br>
+<em>Program Manager, Microsoft Edge</em></p>
+
+<h2>
+<a id="summary" class="anchor" href="#summary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Summary</h2>
+
+<p>We measured the time it took four identical Surface Book laptops to run fully through their batteries while streaming video. The results were recorded with a camera and a time lapse was made available publicly:</p>
+
+<p><a href="https://www.youtube.com/watch?v=rjrxOOfi54k"><img src="https://github.com/MicrosoftEdge/videotest/blob/master/videotest-poster.png?raw=true" alt="Battery tests on streaming video comparing Google Chrome, Mozilla Firefox, and Opera."></a></p>
+
+<p>The results showed that Microsoft Edge (7:22:07) lasted: </p>
+
+<ul>
+<li>70% longer than Google Chrome (4:19:50) </li>
+<li>43% longer than Mozilla Firefox (5:09:30) </li>
+<li>17% longer than Opera (6:18:33)</li>
+</ul>
+
+<h2>
+<a id="methodology" class="anchor" href="#methodology" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methodology</h2>
+
+<h3>
+<a id="computer-setup" class="anchor" href="#computer-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Computer setup</h3>
+
+<p>The test was performed on four Surface Books (256GB disk, Core i5, 8GB RAM, integrated graphics) running Windows 10 (10586.318 th2_release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup: </p>
+
+<ul>
+<li>Display brightness was set to 75% </li>
+<li>Location was disabled</li>
+<li>Devices were connected to a wireless network</li>
+<li>Defender cache was completely built</li>
+<li>Defragmentation was temporarily disabled</li>
+<li>Ambient light sensor was temporarily disabled</li>
+<li>All queued Ngen complication jobs were completed</li>
+<li>Windows Update was temporarily disabled</li>
+<li>“New network found” prompts were disabled</li>
+<li>Windows Error Reporting was temporarily disabled</li>
+<li>Queued idle tasks were forced to complete prior to the test</li>
+<li>Windows Defender was running normally and up to date</li>
+<li>Devices were fully changed before being physically unplugged and running on battery for the test</li>
+<li>Volume was turned to 25%</li>
+<li>Battery Saver was off, but enabled automatically when the battery reached 20%. Device was set to lower screen brightness when Windows battery saver started.</li>
+<li>BitLocker was disabled </li>
+</ul>
+
+<h2>
+<a id="browsers" class="anchor" href="#browsers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browsers</h2>
+
+<p>The specific versions of the browsers tested were: </p>
+
+<table>
+<thead>
+<tr>
+<th>Browser</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge</td>
+<td>Microsoft Edge 25.10586.0.0<br>Microsoft EdgeHTML 13.10586<br>“Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586”</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>Google Chrome 51.0.2704.63 m (64 bit)<br>“Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36”</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>Mozilla Firefox 46.0.1<br>Mozilla83 – 1.0<br>“Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0”</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>Opera 38.0 38.0.2220.29<br>“Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36 OPR/38.0.2220.29”<br>Power saver enabled</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="pre-test" class="anchor" href="#pre-test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pre-Test</h2>
+
+<p>While plugged in, each respective browser was navigated to Netflix.com and logged into the same account. The show <strong>“Nature: Animal Misfits”</strong> was queued and paused immediately on each browser. Each computer was verified to have brightness set to 75% (with ambient brightness disabled) and volume to 25%. </p>
+
+<h2>
+<a id="test" class="anchor" href="#test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test</h2>
+
+<ol>
+<li>Start recording with camera</li>
+<li>Unplug the power bar that all four devices are charging from, ensuring they switch to battery at the same time</li>
+<li>Immediately push play on all devices and start timing</li>
+<li>When there’s less than 5 min remaining in the show, manually use the seek control to reset all devices to the beginning</li>
+<li>Repeat until all devices have run out of battery, recording the time for each of them</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/MicrosoftEdge">MicrosoftEdge</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
