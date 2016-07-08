@@ -7,7 +7,7 @@ _Program Manager, Microsoft Edge_
 
 We measured the time it took four identical Surface Book laptops to run fully through their batteries while streaming video. The results were recorded with a camera and a time lapse was made available publicly:
 
-[![Battery tests on streaming video comparing Google Chrome, Mozilla Firefox, and Opera.](https://img.youtube.com/vi/rjrxOOfi54k/hqdefault.jpg)](https://www.youtube.com/watch?v=rjrxOOfi54k)
+[![Battery tests on streaming video comparing Google Chrome, Mozilla Firefox, and Opera.](https://github.com/MicrosoftEdge/videotest/blob/master/videotest-poster.png?raw=true)](https://www.youtube.com/watch?v=rjrxOOfi54k)
 
 The results showed that Microsoft Edge (7:22:07) lasted: 
 * 70% longer than Google Chrome (4:19:50) 
