@@ -22,6 +22,10 @@ p, td, li {
     color:#333;
 }
 
+p {
+    margin-top:10px;
+}
+
 li {
     padding-left:10px;
     padding-bottom:4px;
