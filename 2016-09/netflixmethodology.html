@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title>Browser efficiency comparison - Netflix</title>
+        <link type="text/css" rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <h1 class="title">Browser efficiency comparison - Netflix</h1>
+            <h1 class="subtitle">Windows 10 Anniversary Update</h1>
+
+            <h2>Methodology summary</h2>
+            <p>The Microsoft Windows team measured the time it took four identical Surface Book laptops to run fully through their batteries while streaming video from Netflix. The results were recorded with a camera and a time lapse was made available publicly.</p>
+            <p>The test was done on four Surface Books running 1607 (build 14393.105) and connected to the Internet through Wifi.</p>
+
+            <h2>Results summary</h2>
+            <p>Microsoft Edge lasted the longest of any browser in this test. Specifically, Microsoft Edge lasted:</p>
+            <ul>
+                <li>23% longer than Opera</li>
+                <li>45% longer than Chrome</li>
+                <li>69% longer than Firefox</li>
+            </ul>
+            <img src="NetflixResults1.png" width="476" height="287"/>
+
+            <h2>Methodology details</h2>
+            
+            <h3>Computer setup</h3>
+            <p>The test was performed on 4 separate Surface Book laptops running Windows 10 Anniversary Update (14393.105 release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+            <ul>
+                <li>Display brightness was set to 75%</li>
+                <li>Location was disabled</li>
+                <li>Bluetooth was disabled</li>
+                <li>Device was connected to a wireless network</li>
+                <li>Defender cache was completely built</li>
+                <li>Defragmentation was temporarily disabled</li>
+                <li>Ambient light sensor was temporarily disabled</li>
+                <li>All queued Ngen complication jobs were completed</li>
+                <li>Windows update was temporarily disabled</li>
+                <li>“New network found” prompts were disabled</li>
+                <li>Windows Error Reporting was temporarily disabled</li>
+                <li>Queued idle tasks were forced to complete</li>
+                <li>Defender was running normally and up to date</li>
+                <li>Device was physically unplugged and running on battery</li>
+                <li>Volume was turned to 25%</li>
+                <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+                <li>Bitlocker was disabled</li>
+                <li>The cache was cleared on each browser</li>
+            </ul>
+
+            <h3>OS and browser versions</h3>
+            <table>
+                <tr>
+                    <td>OS</td>
+                    <td>Windows 10 Pro 14393.105 rs1_release</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>Microsoft Edge 38.14393.0.0</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>Google Chrome 53.0.2785.101 m (64-bit)</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>Firefox 48.0.2</td>
+                </tr>
+                <tr>
+                    <td>Opera</td>
+                    <td>Opera 39.0.2256.71 (battery saver enabled)</td>
+                </tr>
+            </table>
+
+            <h3>Hardware</h3>
+            <p>The specifications for the Surface Books were:</p>
+            <ul>
+                <li>Processor: i5-6300U @ 2.4GHz 2.5GHz</li>
+                <li>Memory: 8G</li>
+                <li>Intel HD Graphics 520</li>
+            </ul>
+
+            <h3>Pre-Test</h3>
+            <p>While plugged in, each respective browser was navigated to Netflix.com and logged into the same account. The show “Nature: Animal Misfits” was queued and paused immediately on each browser. Each computer was verified to have brightness set to 75% (with ambient brightness disabled) and volume to 25%.</p>
+
+            <h3>Test</h3>
+            <ol>
+                <li>Start recording with camera</li>
+                <li>Unplug the power bar that all four devices are charging from, ensuring they switch to battery at the same time</li>
+                <li>Immediately push play on all devices and start timing</li>
+                <li>When there’s less than 5 min remaining in the show, manually use the seek control to reset all devices to the beginning</li>
+                <li>Repeat until all devices have run out of battery, recording the time for each of them</li>
+            </ol>
+
+            <h2>Results details</h2>
+            <p>The times it took for each device running each respective browser to completely drain its battery are as follows:</p>
+            <table class="resultsTable">
+                <tr>
+                    <td></td>
+                    <td>Time</td>
+                    <td>Minutes</td>
+                </tr>
+                <tr>
+                    <td>Firefox 48</td>
+                    <td>5:11:34</td>
+                    <td>312</td>
+                </tr>
+                <tr>
+                    <td>Chrome 53</td>
+                    <td>6:03:54</td>
+                    <td>364</td>
+                </tr>
+                <tr>
+                    <td>Opera 39</td>
+                    <td>7:08:58</td>
+                    <td>429</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>8:47:06</td>
+                    <td>527</td>
+                </tr>
+            </table>
+            <p>Almost every browser saw an increase from 1511 (when this test was run previously) to 1607. In this chart, the previous results have been added in for comparison. The lighter blue bars (Firefox 46, Chrome 51, Opera 38, Microsoft Edge 1511) were run on the 2015 Fall update of Windows 10 (1511).</p>
+            <img src="NetflixResults2.png" width="599" height="283"/>
+        </div>
+    </body>
+</html>

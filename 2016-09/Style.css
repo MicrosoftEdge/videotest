@@ -1,0 +1,46 @@
+﻿.stage {
+    max-width:800px;
+    margin:0 auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight:500;
+    margin-bottom:0;
+}
+
+.subtitle {
+    margin:0;
+    font-size:1.5em;
+}
+
+h2 {
+    color:#0070c0;
+}
+
+p, td, li {
+    color:#333;
+}
+
+p {
+    margin-top:10px;
+}
+
+li {
+    padding-left:10px;
+    padding-bottom:4px;
+}
+
+td {
+    padding-right:20px;
+    padding-bottom:4px;
+}
+
+.resultsTable td {
+    text-align:right;
+}
+
+img {
+    margin:5px auto;
+    display:block;
+}

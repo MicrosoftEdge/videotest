@@ -1,0 +1,217 @@
+<html>
+    <head>
+        <title>Browser efficiency comparison - Webdriver</title>
+        <link type="text/css" rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <h1 class="title">Browser efficiency comparison - Webdriver</h1>
+            <h1 class="subtitle">Windows 10 Anniversary Update</h1>
+
+            <h2>Methodology summary</h2>
+            <p>The Microsoft Windows team measured the average power consumption of the CPU, GPU, and Wifi antenna while Microsoft Edge, Chrome, Firefox, and Opera ran a complex yet representative set of user activities.</p>
+            <p>These tests were done on three Surface Books running Windows 10 Anniversary Update (build 14393.105) and connected to the Internet through Wifi. Actual power consumption of the CPU, GPU, and Wifi antenna were measured using onboard Maxim chips, and read through Performance Monitor (Perfmon).</p>
+
+            <h2>Results summary</h2>
+            <p>The CPU, GPU, and Wifi antenna all used more power on the same workload when it was run using Chrome, Firefox, and Opera, when compared to Microsoft Edge, running on Windows 10 Anniversary Update (14393.105). Microsoft Edge used:</p>
+            <ul>
+                <li>24% less power than Chrome</li>
+                <li>32% less power than Opera</li>
+                <li>43% less power than Firefox</li>
+            </ul>
+            <img src="WebdriverResults1.png" width="520" height="267" />
+
+            <p>Edge, Chrome, and Opera had a lower mean power consumption when comparing the Anniversary Update (1607) to the previous release (1511) whereas Firefox had virtually no change. In the following graph, we also show Microsoft Edge (1511), Chrome 51, Opera 38, and Firefox 46 running on Windows 10 (1511). Those results are from our <a href="https://blogs.windows.com/windowsexperience/2016/06/20/more-battery-with-edge/#THjxAMqWpGerIZU7.97" target="_blank">previous analysis</a>. Here, we see the improvements made between the updated OS and the updated browsers since then.</p>
+            <img src="WebdriverResults2.png" width="703" height="280"/>
+
+            <h2>Methodology details</h2>
+            
+            <h3>Computer setup</h3>
+            <p>The test was performed on 3 separate Surface Book laptops running Windows 10 Anniversary Update (14393.105 release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+            <ul>
+                <li>Display brightness was set to 50%</li>
+                <li>Location was disabled</li>
+                <li>Bluetooth was disabled</li>
+                <li>Device was connected to a wireless network</li>
+                <li>Defender cache was completely built</li>
+                <li>Defragmentation was temporarily disabled</li>
+                <li>Ambient light sensor was temporarily disabled</li>
+                <li>All queued Ngen complication jobs were completed</li>
+                <li>Windows update was temporarily disabled</li>
+                <li>“New network found” prompts were disabled</li>
+                <li>Windows Error Reporting was temporarily disabled</li>
+                <li>Queued idle tasks were forced to complete</li>
+                <li>Defender was running normally and up to date</li>
+                <li>Device was physically unplugged and running on battery</li>
+                <li>Volume was muted</li>
+                <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+                <li>Bitlocker was disabled</li>
+                <li>The cache was cleared on each browser</li>
+            </ul>
+
+            <h3>OS and browser versions</h3>
+            <table>
+                <tr>
+                    <td>OS</td>
+                    <td>Windows 10 Pro 14393.105 rs1_release</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>Microsoft Edge 38.14393.0.0</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>Google Chrome 53.0.2785.101 m (64-bit)</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>Firefox 47.0.1</td>
+                </tr>
+                <tr>
+                    <td>Opera</td>
+                    <td>Opera 39.0.2256.71 (battery saver enabled)</td>
+                </tr>
+            </table>
+
+            <p>Firefox was not run on the most recent version because of a known <a href="https://github.com/SeleniumHQ/selenium/issues/2559" target="_blank">limitation</a> in Firefox 48.</p>
+
+            <h3>Hardware</h3>
+            <p>The specifications for the Surface Books were:</p>
+            <ul>
+                <li>Processor: i5-6300U @ 2.4GHz 2.5GHz</li>
+                <li>Memory: 8G</li>
+                <li>Intel HD Graphics 520</li>
+            </ul>
+
+            <h3>Activites and automation harness</h3>
+            <p>Each browser was automated using WebDriver, a cross-platform tool designed for automating web browsing, and implemented by the major browsers. While the power draw was being measured, Webdriver executed the following activities:</p>
+            <p>Note that pauses are included throughout this workload, but are not included in this description for simplicity. Each scenario (one domain in one tab) lasts about a minute before the next tab is opened, though it varies by scenario.</p>
+            <ol>
+                <li>Open the respective browser</li>
+                <li>Navigate to a video on Youtube.com: “Microsoft Design: Connecting Makers”</li>
+                <li>The video will autoplay and will continue in a background tab for the remainder of the test</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to amazon.com</li>
+                <li>In the search box, enter “Game of Thrones” and press enter</li>
+                <li>Click on “Game of Thrones Season 1”</li>
+                <li>Scroll down to the reviews</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to Facebook.com</li>
+                <li>Log in to Facebook</li>
+                <li>Scroll through the feed on Facebook</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to google.com</li>
+                <li>Search for “Seattle”</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to gmail.com</li>
+                <li>Log in to Gmail</li>
+                <li>Open and then close several messages in the inbox</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to the Wikipedia article on “United States”</li>
+                <li>Scroll through the article</li>
+                <li>Close the browser</li>
+            </ol>
+            
+            <p>The code used to execute the test can be found <a href="https://github.com/MicrosoftEdge/powertest/releases/tag/bloggedVersion" target="_blank">on Github</a>.</p>
+            
+            <h3>Measuring power</h3>
+            <p>Power was measured on the Surface Book because it has integrated hardware instrumentation that’s able to measure the real power consumption of the CPU, GPU and Wifi antenna while the automation is being executed. This is done using the <a href="https://www.maximintegrated.com/en/products/analog/amplifiers/MAX34407.html" target="_blank">Maxim 34407 Power Accumulator chip</a>. The results of the Maxim chips were read using the built in Windows tool “Performance Monitor”. Performance Monitor was opened and configured to measure each component independently:</p>
+            <ul>
+                <li>\Energy Meter (CPU_CORES)\Power</li>
+                <li>\Energy Meter (GPU_TOP)\Power</li>
+                <li>\Energy Meter (WLAN_BT)\Power</li>
+            </ul>
+            <p>It was set to measure for a max duration of 1000s, recording once per second.</p>
+            <p>For each browser and for each device, 3 iterations on TH2 and 5 iterations on RS1 were measured through the following steps:</p>
+            <ol>
+                <li>Clear measurements from Performance Monitor</li>
+                <li>Start measurements in Performance Monitor</li>
+                <li>Immediately execute the WebDriver automation for the browser being measured</li>
+                <li>Wait for the automation to complete (steps described above)</li>
+                <li>Once automation completes and the browser closes, immediately pause the measurements in Performance Monitor</li>
+                <li>Record the average power consumption for each of the three instrumented components</li>
+            </ol>
+            
+            <h2>Results details</h2>
+            <p>The following results combine the data collected in the <a href="https://blogs.windows.com/windowsexperience/2016/06/20/more-battery-with-edge/#THjxAMqWpGerIZU7.97" target="_blank">previous analysis</a> (on 1511 with browsers that were up to date at the time) with recent results on the Anniversary Update (1607) and newer browsers. These results are in mW:</p>
+            
+            <table class="resultsTable">
+                <tr>
+                    <td></td>
+                    <td>OS</td>
+                    <td>Avg CPU</td>
+                    <td>Avg GPU</td>
+                    <td>Avg Wifi</td>
+                    <td>Avg CPU+GPU+Wifi</td>
+                </tr>
+                <tr>
+                    <td>Edge 1511</td>
+                    <td>1511</td>
+                    <td>1599</td>
+                    <td>319</td>
+                    <td>150</td>
+                    <td>2068</td>
+                </tr>
+                <tr>
+                    <td>Edge 1607</td>
+                    <td>1607</td>
+                    <td>1340</td>
+                    <td>330</td>
+                    <td>141</td>
+                    <td>1811</td>
+                </tr>
+                <tr>
+                    <td>Chrome 51</td>
+                    <td>1511</td>
+                    <td>1889</td>
+                    <td>767</td>
+                    <td>163</td>
+                    <td>2819</td>
+                </tr>
+                <tr>
+                    <td>Chrome 53</td>
+                    <td>1607</td>
+                    <td>1559</td>
+                    <td>720</td>
+                    <td>116</td>
+                    <td>2395</td>
+                </tr>
+                <tr>
+                    <td>Opera 38</td>
+                    <td>1511</td>
+                    <td>2381</td>
+                    <td>543</td>
+                    <td>152</td>
+                    <td>3077</td>
+                </tr>
+                <tr>
+                    <td>Opera 39</td>
+                    <td>1607</td>
+                    <td>2153</td>
+                    <td>400</td>
+                    <td>124</td>
+                    <td>2678</td>
+                </tr>
+                <tr>
+                    <td>Firefox 46</td>
+                    <td>1511</td>
+                    <td>2434</td>
+                    <td>525</td>
+                    <td>202</td>
+                    <td>3161</td>
+                </tr>
+                <tr>
+                    <td>Firefox 47</td>
+                    <td>1607</td>
+                    <td>2395</td>
+                    <td>602</td>
+                    <td>179</td>
+                    <td>3176</td>
+                </tr>
+            </table>
+
+            <img src="WebdriverResults2.png" width="703" height="280" />
+
+        </div>
+    </body>
+</html>
