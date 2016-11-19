@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Browser efficiency comparison - Netflix</title>
+        <link type="text/css" rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <h1 class="title">Browser efficiency comparison - Netflix</h1>
+            <h1 class="subtitle">Windows 10 Anniversary Update and Chrome 54</h1>
+
+            <h2>Methodology summary</h2>
+            <p>The Microsoft Windows team measured the time it took two identical Surface Book laptops to run fully through their batteries while streaming video from Netflix.</p>
+            <p>The test was done on two Surface Books running 1607 (build 14393.447) and connected to the Internet through Wifi.</p>
+
+            <h2>Results</h2>
+            <p>Microsoft Edge lasted 13% longer than Chrome 54 in this test.</p>
+            
+            <img src="RundownResults.png" width="487" height="390"/>
+
+            <table class="resultsTable">
+                <tr>
+                    <td></td>
+                    <td>Time</td>
+                    <td>Minutes</td>
+                </tr>
+                <tr>
+                    <td>Chrome 53</td>
+                    <td>7:09:13</td>
+                    <td>729</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>8:05:44</td>
+                    <td>486</td>
+                </tr>
+            </table>
+
+            <h2>Methodology details</h2>
+            
+            <h3>Computer setup</h3>
+            <p>The test was performed on 2 separate Surface Book laptops running Windows 10 Anniversary Update (14393.447 release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+            <ul>
+                <li>Display brightness was set to 100%</li>
+                <li>Volume was turned to 20% with headphones connected</li>
+                <li>Location was disabled</li>
+                <li>Bluetooth was disabled</li>
+                <li>Device was connected to a wireless network</li>
+                <li>Ambient light sensor was temporarily disabled</li>
+                <li>Defender was running normally and up to date</li>
+                <li>Device was physically unplugged and running on battery</li>
+                <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+                <li>The cache was cleared on each browser</li>
+            </ul>
+
+            <h3>OS and browser versions</h3>
+            <table>
+                <tr>
+                    <td>OS</td>
+                    <td>Windows 10 Pro 14393.447</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>Microsoft Edge 38.14393.447.0</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>Google Chrome 54.0.2840.099 m (64-bit)</td>
+                </tr>
+            </table>
+
+            <h3>Hardware</h3>
+            <table>
+                <tr>
+                    <td>Processor</td>
+                    <td>i5-6300U @ 2.4GHz 2.5GHz</td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td>8G</td>
+                </tr>
+                <tr>
+                    <td>Graphics</td>
+                    <td>Intel HD Graphics 520</td>
+                </tr>
+            </table>
+
+            <h3>Pre-Test</h3>
+            <p>While plugged in, each respective browser was navigated to Netflix.com and logged into the same account. The TV show "Gilmore Girls: Season 1" was queued and paused immediately on each browser. The Post-Play autoplay feature on Netflix was enabled to continuously play the next episode when one finishes. Each computer was verified to have brightness set to 100% (with ambient brightness disabled) and volume to 20%.</p>
+
+            <h3>Test</h3>
+            <ol>
+                <li>Start recording with camera</li>
+                <li>Unplug the power bar that all four devices are charging from, ensuring they switch to battery at the same time</li>
+                <li>Immediately push play on all devices and start timing</li>
+                <li>The mouse cursor was manually moved every 2 episodes to ensure the Netflix "Are you still watching?" prompt does not interrupt continuous play.</li>
+                <li>Continue until both device have run out of battery power, recording the time it takes for each.</li>
+            </ol>
+        </div>
+    </body>
+</html>
