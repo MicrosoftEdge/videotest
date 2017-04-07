@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Browser efficiency comparison - Fullscreen Vimeo</title>
+        <link type="text/css" rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <h1 class="title">Browser efficiency comparison - Fullscreen Vimeo</h1>
+            <h1 class="subtitle">Windows 10 Creator's Update</h1>
+
+            <h2>Methodology summary</h2>
+            <p>The Microsoft Edge team measured the time it took three identical Surface Book laptops to run fully through their batteries while streaming video from Vimeo in fullscreen.</p>
+            <p>The test was done on three Surface Books running build 15063 and connected to the Internet through Wifi.</p>
+
+            <h2>Results</h2>
+            <p>Microsoft Edge lasted 77% longer than Firefox and 35% longer than Chrome in this test.</p>
+            
+            <img src="RundownResults.png" width="581" height="362"/>
+
+            <table class="resultsTable">
+                <tr>
+                    <td></td>
+                    <td>Time</td>
+                    <td>Minutes</td>
+                </tr>
+                <tr>
+                    <td>Firefox 52</td>
+                    <td>7:04:19</td>
+                    <td>424</td>
+                </tr>
+                <tr>
+                    <td>Chrome 57</td>
+                    <td>9:17:03</td>
+                    <td>557</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>12:31:08</td>
+                    <td>751</td>
+                </tr>
+            </table>
+
+            <h2>Methodology details</h2>
+            
+            <h3>Computer setup</h3>
+            <p>The test was performed on theree separate Surface Book laptops running Windows 10 Creator's Update (15063.0 release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+            <ul>
+                <li>Display brightness was set to 75%</li>
+                <li>Volume was set to mute</li>
+                <li>Location was disabled</li>
+                <li>Bluetooth was disabled</li>
+                <li>Quiet hours were enabled</li>
+                <li>Updates were temporarily disabled</li>
+                <li>Device was connected to a wireless network</li>
+                <li>Ambient light sensor was disabled</li>
+                <li>Defender was running normally and up to date</li>
+                <li>Device was physically unplugged and running on battery</li>
+                <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+                <li>The cache was cleared on each browser</li>
+            </ul>
+
+            <h3>OS and browser versions</h3>
+            <table>
+                <tr>
+                    <td>OS</td>
+                    <td>Windows 10 Pro 15063.0</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>Microsoft Edge 40.15063.0.0</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>Google Chrome 57.0.2987.133 (64-bit)</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>Firefox 52.0.1 (32-bit)</td>
+                </tr>
+            </table>
+
+            <h3>Hardware</h3>
+            <table>
+                <tr>
+                    <td>Processor</td>
+                    <td>i5-6300U @ 2.4GHz 2.5GHz</td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td>8G</td>
+                </tr>
+                <tr>
+                    <td>Graphics</td>
+                    <td>Intel HD Graphics 520</td>
+                </tr>
+            </table>
+
+            <h3>Pre-Test</h3>
+            <p>While plugged in, each respective browser was navigated to Vimeo.com, set to the same video with auto-looping enabled, set to play, and set to fullscreen. The video played was: <a target="_blank" href="https://vimeo.com/210519384">https://vimeo.com/210519384</a></p>
+
+            <h3>Test</h3>
+            <ol>
+                <li>Start recording with camera</li>
+                <li>Unplug the power bar that all devices are charging from, ensuring they switch to battery at the same time</li>
+                <li>Continue until all device have run out of battery power, recording the time it takes for each.</li>
+            </ol>
+        </div>
+    </body>
+</html>
