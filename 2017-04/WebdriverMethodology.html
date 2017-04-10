@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <title>Browser efficiency comparison - Webdriver</title>
+        <link type="text/css" rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <h1 class="title">Browser efficiency comparison - Webdriver</h1>
+            <h1 class="subtitle">Windows 10 Creator's Update</h1>
+
+            <h2>Methodology summary</h2>
+            <p>The Microsoft Edge team measured the average power consumption of the CPU, GPU, and Wifi antenna while Microsoft Edge, Chrome, and Firefox ran a representative set of user activities in each browser, automated through WebDriver.</p>
+            <p>These tests were done on four Surface Books running the Windows 10 Creator's Update (build 15063) and connected to the Internet through Wifi. Actual power consumption of the CPU, GPU, and Wifi antenna were measured using onboard Maxim chips, and read through Windows Performance Recorder.</p>
+
+            <h2>Results summary</h2>
+            <p>The total CPU, GPU, and Wifi antenna power consumption was measured on the same workload using Chrome, Firefox, and Microsoft Edge, running on Windows 10 Creator's Update (15063). Microsoft Edge used:</p>
+            <ul>
+                <li>31% less power than Chrome 57</li>
+                <li>44% less power than Firefox 52</li>
+            </ul>
+            <img src="WebdriverResults.png" width="582" height="362" />
+
+            <h2>Methodology details</h2>
+            
+            <h3>Computer setup</h3>
+            <p>The test was performed on four separate Surface Book laptops running Windows 10 Anniversary Update (14393.105 release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+            <ul>
+                <li>Display brightness was set to 50%</li>
+                <li>Location was disabled</li>
+                <li>Bluetooth was disabled</li>
+                <li>Quiet hours were enabled</li>
+                <li>Device was connected to a wireless network</li>
+                <li>Defender cache was completely built</li>
+                <li>Defragmentation was temporarily disabled</li>
+                <li>Ambient light sensor was disabled</li>
+                <li>Windows update was temporarily disabled</li>
+                <li>&quot;New network found&quot; prompts were disabled</li>
+                <li>Defender was running normally and up to date</li>
+                <li>Device was physically unplugged and running on battery</li>
+                <li>Volume was muted</li>
+                <li>Windows Battery Saver mode was not set to activate</li>
+                <li>Bitlocker was disabled</li>
+                <li>The cache was cleared on each browser</li>
+            </ul>
+
+            <h3>OS and browser versions</h3>
+            <table>
+                <tr>
+                    <td>OS</td>
+                    <td>Windows 10 Pro 15063.0</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>Microsoft Edge 40.15063.0.0</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>Google Chrome 57.0.2987.133 (64-bit)</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>Firefox 52.0.1 (32-bit)</td>
+                </tr>
+            </table>
+
+            <h3>Hardware</h3>
+            <table>
+                <tr>
+                    <td>Processor</td>
+                    <td>i5-6300U @ 2.4GHz 2.5GHz</td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td>8G</td>
+                </tr>
+                <tr>
+                    <td>Graphics</td>
+                    <td>Intel HD Graphics 520</td>
+                </tr>
+            </table>
+
+            <h3>Automation</h3>
+            <p>Each browser was automated using WebDriver, a cross-platform tool designed for automating web browsing, and implemented by the major browsers. While the power draw was being measured, Webdriver executed the following activities:</p>
+            <p>Note that pauses are included throughout this workload, but are not included in this description for simplicity.</p>
+            <ol>
+                <li>Open the respective browser</li>
+                <li>Navigate to Gmail.com</li>
+                <li>Log in to Gmail</li>
+                <li>Open and then close several messages in the inbox</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to BBC News</li>
+                <li>Click on one of the top stories and scroll through it</li>
+                <li>Navigate to Yahoo, and then click on &quot;News&quot;</li>
+                <li>Open a story and scroll through it</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to a video on Youtube.com: &quot;Microsoft Design: Connecting Makers&quot;</li>
+                <li>Watch the video for 90s</li>
+                <li>Navigate to Facebook.com</li>
+                <li>Log in to Facebook</li>
+                <li>Scroll through the feed on Facebook</li>
+                <li>Open a new tab</li>
+                <li>In the new tab, navigate to Amazon.com</li>
+                <li>In the search box, enter &quot;Game of Thrones&quot; and press enter</li>
+                <li>Click on &quot;Game of Thrones Season 1&quot;</li>
+                <li>Scroll down to the reviews</li>
+                <li>Navigate to the Wikipedia article on &quot;United States&quot;</li>
+                <li>Scroll through the article</li>
+                <li>Navigate to Google.com</li>
+                <li>Search for &quot;Seattle&quot;</li>
+                <li>Navigate to ESPN.com</li>
+                <li>Scroll through the homepage</li>
+                <li>Navigate to Twitter.com</li>
+                <li>Scroll through several of the publicly promoted tweets on the homepage</li>
+                <li>Navigate to the Instagram page for the &quot;New York Public Library&quot;</li>
+                <li>Scroll down to, and click on, the &quot;Load more&quot; button</li>
+                <li>Scroll through several pages of the infinite list</li>
+                
+                <li>Close the browser</li>
+            </ol>
+            
+            <p>The code used to execute the test can be found <a href="https://github.com/MicrosoftEdge/BrowserEfficiencyTest/" target="_blank">on Github</a>.</p>
+
+            <p>For each browser, a minimum of 16 iterations were recorded, and the average between all iterations reported. Iterations for each browser were approximately spread between all four devices to ensure fair comparisons.</p>
+            
+            <h3>Measuring power</h3>
+            <p>Power was measured on the Surface Book because it has integrated hardware instrumentation that's able to measure the real power consumption of the CPU, GPU and Wifi antenna while the automation is being executed. This is done using the <a href="https://www.maximintegrated.com/en/products/analog/amplifiers/MAX34407.html" target="_blank">Maxim 34407 Power Accumulator chip</a>. The results of the Maxim chips were read using the tool &quot;Windows Performance Recorder&quot;. Windows Performance Recorder was configured to independently measure the instantaneous power consumption of the CPU, GPU, and Wifi antenna, and record periodic measurements in a trace file.</p>
+           
+            
+            <h2>Results details</h2>
+         
+            <table class="resultsTable">
+                <tr>
+                    <td></td>
+                    <td>Avg CPU</td>
+                    <td>Avg GPU</td>
+                    <td>Avg Wifi</td>
+                    <td>Avg CPU+GPU+Wifi</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>1383</td>
+                    <td>368</td>
+                    <td>106</td>
+                    <td>1857</td>
+                </tr>
+                <tr>
+                    <td>Chrome 57</td>
+                    <td>1924</td>
+                    <td>571</td>
+                    <td>185</td>
+                    <td>2680</td>
+                </tr>
+                <tr>
+                    <td>Firefox 52</td>
+                    <td>2572</td>
+                    <td>542</td>
+                    <td>192</td>
+                    <td>3306</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
