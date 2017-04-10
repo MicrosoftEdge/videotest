@@ -13,7 +13,7 @@
             <p>These tests were done on four Surface Books running the Windows 10 Creator's Update (build 15063) and connected to the Internet through Wifi. Actual power consumption of the CPU, GPU, and Wifi antenna were measured using onboard Maxim chips, and read through Windows Performance Recorder.</p>
 
             <h2>Results summary</h2>
-            <p>The total CPU, GPU, and Wifi antenna power consumption was measured on the same workload using Chrome, Firefox, and Microsoft Edge, running on Windows 10 Creator's Update (15063). Microsoft Edge used:</p>
+            <p>The total CPU, GPU, and Wifi antenna power consumption was measured on the same workload using Chrome, Firefox, and Microsoft Edge, running on the Windows 10 Creator's Update (15063). Based on an average of at least 16 iterations per browser, Microsoft Edge used:</p>
             <ul>
                 <li>31% less power than Chrome 57</li>
                 <li>44% less power than Firefox 52</li>
@@ -23,7 +23,7 @@
             <h2>Methodology details</h2>
             
             <h3>Computer setup</h3>
-            <p>The test was performed on four separate Surface Book laptops running Windows 10 Anniversary Update (14393.105 release). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+            <p>The test was performed on four separate Surface Book laptops running the Windows 10 Creator's Update (build 15063). These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
             <ul>
                 <li>Display brightness was set to 50%</li>
                 <li>Location was disabled</li>
@@ -80,7 +80,7 @@
             </table>
 
             <h3>Automation</h3>
-            <p>Each browser was automated using WebDriver, a cross-platform tool designed for automating web browsing, and implemented by the major browsers. While the power draw was being measured, Webdriver executed the following activities:</p>
+            <p>Each browser was automated using WebDriver, a cross-platform tool designed for automating web browsing, and implemented by the major browsers. While the power draw was being measured, WebDriver executed the following activities:</p>
             <p>Note that pauses are included throughout this workload, but are not included in this description for simplicity.</p>
             <ol>
                 <li>Open the respective browser</li>
