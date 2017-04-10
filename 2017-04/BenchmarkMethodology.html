@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Browser performance comparison - JavaScript Benchmarks</title>
+        <link type="text/css" rel="stylesheet" href="Style.css" />
+    </head>
+    <body>
+        <div class="stage">
+            <h1 class="title">Browser performance comparison - JavaScript Benchmarks</h1>
+            <h1 class="subtitle">Windows 10 Creators Update</h1>
+
+            <h2>Methodology summary</h2>
+            <p>The Microsoft Edge team ran the Google Octane 2.0 and Apple Jetstream 1.1 benchmarks on the latest versions of Microsoft Edge, Google Chrome, and Mozilla Firefox as of 3/28/2017: Microsoft Edge 15.15063, Google Chrome 57.0.2987.110, and Mozilla Firefox 52.0.1.</p>
+            <p>For all three browsers, the test was performed on the same desktop PC running Windows 10 Creators Update (build 15063) and connected to the Internet through Ethernet.</p>
+
+            <h2>Results</h2>
+            <p>Microsoft Edge scored 5% faster than Google Chrome and 9% faster than Mozilla Firefox according to the Google Octane 2.0 benchmark.</p>
+            
+            <img src="octaneResults.png" width="581" height="362"/>
+
+            <p>Microsoft Edge scored 27% faster than Google Chrome and 51% faster than Mozilla Firefox according to the Apple Jetstream 1.1 benchmark.</p>
+
+            <img src="jetstreamResults.png" width="581" height="362"/>
+
+            <table class="resultsTable">
+                <tr>
+                    <td></td>
+                    <td>Octane 2.0 score</td>
+                    <td>Jetstream 1.1 score</td>
+                </tr>
+                <tr>
+                    <td>Firefox 52 (64-bit)</td>
+                    <td>28286</td>
+                    <td>140.08</td>
+                </tr>
+                <tr>
+                    <td>Chrome 57 (64-bit)</td>
+                    <td>29399</td>
+                    <td>166.33</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge 15 (64-bit)</td>
+                    <td>30818</td>
+                    <td>211.68</td>
+                </tr>
+            </table>
+
+            <h2>Methodology details</h2>
+            
+            <h3>Computer setup</h3>
+            <p>The test was performed on a desktop PC running the Windows 10 Creator's Update (15063.0 release). All tests were initiated manually on a remote machine with no other applications running. Power and internet cables were connected during the tests. Each test was run three times in each browser, with the median score reported above.</p>
+
+            <h3>OS and browser versions</h3>
+            <table>
+                <tr>
+                    <td>OS</td>
+                    <td>Windows 10 Pro 15063.0</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Edge</td>
+                    <td>Microsoft EdgeHTML 15.15063.0.0</td>
+                </tr>
+                <tr>
+                    <td>Chrome</td>
+                    <td>Google Chrome 57.0.2987.110 (64-bit)</td>
+                </tr>
+                <tr>
+                    <td>Firefox</td>
+                    <td>Firefox 52.0.1 (64-bit)</td>
+                </tr>
+            </table>
+
+            <h3>Hardware</h3>
+            <table>
+                <tr>
+                    <td>Processor</td>
+                    <td>i5-3475S @ 2.90GHz (4 CPUs)</td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td>4GB</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
