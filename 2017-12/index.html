@@ -1,0 +1,517 @@
+<html>
+
+<head>
+    <title>Browser efficiency comparison - Fullscreen Video</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="stage">
+        <h1 class="title">Browser efficiency comparison - Fullscreen Video</h1>
+        <h1 class="subtitle">Windows 10 Fall Creator's Update</h1>
+        <h2>Methodology summary</h2>
+        <p>The Microsoft Edge team measured the time it took three identical Surface Book laptops to run fully through their batteries while streaming HTML5 video in fullscreen.</p>
+        <p> The test was done on three Surface Books running build 16299 and connected to the Internet through Wifi.</p>
+        <h2>Results</h2>
+        <p>Microsoft Edge lasted 79% longer than Firefox, 29% longer than Chrome, and 40% longer than Opera in this test.</p>
+        <p>Additional numbers were generated to control for battery health and to reflect what the performance might have looked like if the battery run-down had consumed the battery design capacity of the device. This was used as a gut-check to ensure that
+            one browser wouldn't significant outperform another in conditions where battery health had deteriorated.</p><img src="rundown-results.png" width="744" height="414" />
+        <table class="resultsTable">
+            <tr>
+                <td>Browser / Version</td>
+                <td>Average Time</td>
+                <td>Average Time (normalized)</td>
+            </tr>
+            <tr>
+                <td>Microsoft EdgeHTML 16.16299</td>
+                <td>16:02:50</td>
+                <td>16:41:06</td>
+            </tr>
+            <tr>
+                <td>Google Chrome 62.0.3202.94 (64-bit)</td>
+                <td>12:28:03</td>
+                <td>12:53:41</td>
+            </tr>
+            <tr>
+                <td>Mozilla Firefox 56.0.2 (64-bit)</td>
+                <td>9:12:25</td>
+                <td>9:51:15</td>
+            </tr>
+            <tr>
+                <td>Mozilla Firefox 57.0 (64-bit)</td>
+                <td>8:58:18</td>
+                <td>9:44:23</td>
+            </tr>
+            <tr>
+                <td>Opera 49.0.2736.39 (PGO)</td>
+                <td>11:28:53</td>
+                <td>12:06:21</td>
+            </tr>
+        </table>
+        <h2>Methodology details</h2>
+        <h3>Computer setup</h3>
+        <p>The test was performed on four separate Surface Book laptops running the Windows 10 Fall Creator's Update (16299 release). A sample was taken for each browser on each laptop. These computers were configured to the following settings, to increase
+            consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+        <ul>
+            <li>Display brightness was set to 50%</li>
+            <li>Volume was set to mute</li>
+            <li>Location was disabled</li>
+            <li>Bluetooth was disabled</li>
+            <li>Quiet hours were enabled</li>
+            <li>Updates were temporarily disabled</li>
+            <li>Device was connected to a wireless network</li>
+            <li>Ambient light sensor was disabled</li>
+            <li>Defender was running normally and up to date</li>
+            <li>Device was physically unplugged and running on battery</li>
+            <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+            <li>Windows Update was temporarily disabled</li>
+            <li>The cache was cleared on each browser</li>
+        </ul>
+        <p>In order to collect precise power usage data, the <a href="../maximdriver/Maxim.zip">Maxim power driver</a> was installed onto each machine.</p>
+        <h3>Hardware</h3>
+        <table>
+            <tr>
+                <td>Processor</td>
+                <td>i5-6300U @ 2.4GHz</td>
+            </tr>
+            <tr>
+                <td>Memory</td>
+                <td>8G</td>
+            </tr>
+            <tr>
+                <td>Graphics</td>
+                <td>Intel HD Graphics 520</td>
+            </tr>
+        </table>
+        <h3>Running the test</h3>
+        <p>While plugging into power, each browser was navigated to the <a target="_blank" href="./test">video test site.</a> The quality option was set to 720p, and the sync mechanism was used to start the videos simultaneously. All laptops were plugged
+            into the same power strip, and power was shut off as the video began.</p>
+        <p>The laptops were allowed to play video until all of them had lost power. After the power had run down and the laptops had shut off, power was restored. Run-time and power consumption data was then collected by running "powercfg /spr" and opening the generated report.</p>
+        <p>For the video test, all methodology was the same, except that the duration value was determined by examining the clock that was placed behind the laptops.</p>
+
+        <h2>Result Details</h2>
+        <h3>Summary</h3>
+
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th title="Field #1">Browser</th>
+                    <th title="Field #2">Actual Time</th>
+                    <th title="Field #3">Normalized Time</th>
+                    <th title="Field #4">CPU</th>
+                    <th title="Field #5">GPU</th>
+                    <th title="Field #6">WiFi</th>
+                    <th title="Field #7">Edge Advantage (actual)</th>
+                    <th title="Field #8">Edge Advantage (normalized)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Edge 16</td>
+                    <td>16:02:50</td>
+                    <td>16:41:06</td>
+                    <td>207 mW</td>
+                    <td>50 mW</td>
+                    <td>62 mW</td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>Chrome 62</td>
+                    <td>12:28:03</td>
+                    <td>12:53:41</td>
+                    <td>419 mW</td>
+                    <td>55 mW</td>
+                    <td>12 mW</td>
+                    <td>Edge lasts 29% longer</td>
+                    <td>Edge lasts 29% longer</td>
+                </tr>
+                <tr>
+                    <td>Firefox 56</td>
+                    <td>9:12:25</td>
+                    <td>9:51:15</td>
+                    <td>536 mW</td>
+                    <td>1,049 mW</td>
+                    <td>10 mW</td>
+                    <td>Edge lasts 74% longer</td>
+                    <td>Edge lasts 69% longer</td>
+                </tr>
+                <tr>
+                    <td>Firefox 57</td>
+                    <td>8:58:18</td>
+                    <td>9:44:23</td>
+                    <td>574 mW</td>
+                    <td>1,273 mW</td>
+                    <td>7 mW</td>
+                    <td>Edge lasts 79% longer</td>
+                    <td>Edge lasts 71% longer</td>
+                </tr>
+                <tr>
+                    <td>Opera 49</td>
+                    <td>11:28:53</td>
+                    <td>12:06:21</td>
+                    <td>518 mW</td>
+                    <td>99 mW</td>
+                    <td>12 mW</td>
+                    <td>Edge lasts 40% longer</td>
+                    <td>Edge lasts 38% longer</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Raw</h3>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th title="Field #1">Browser</th>
+                    <th title="Field #2">Laptop</th>
+                    <th title="Field #3">Duration</th>
+                    <th title="Field #4">Energy Spent</th>
+                    <th title="Field #5">Avg CPU Power</th>
+                    <th title="Field #6">Avg GPU Power</th>
+                    <th title="Field #7">Avg WiFi Power</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chrome 62</td>
+                    <td>A</td>
+                    <td>12:09:25</td>
+                    <td>65,581 mWh</td>
+                    <td>402 mW</td>
+                    <td>36 mW</td>
+                    <td>3 mW</td>
+                </tr>
+                <tr>
+                    <td>Opera 49</td>
+                    <td>B</td>
+                    <td>11:10:48</td>
+                    <td>63,075 mWh</td>
+                    <td>493 mW</td>
+                    <td>79 mW</td>
+                    <td>8 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 56</td>
+                    <td>C</td>
+                    <td>9:13:28</td>
+                    <td>65,370 mWh</td>
+                    <td>524 mW</td>
+                    <td>1,452 mW</td>
+                    <td>7 mW</td>
+                </tr>
+                <tr>
+                    <td>Edge 16</td>
+                    <td>D</td>
+                    <td>13:33:05</td>
+                    <td>66,008 mWh</td>
+                    <td>283 mW</td>
+                    <td>107 mW</td>
+                    <td>36 mW</td>
+                </tr>
+                <tr>
+                    <td>Edge 16</td>
+                    <td>A</td>
+                    <td>16:45:17</td>
+                    <td>65,872 mWh</td>
+                    <td>192 mW</td>
+                    <td>36 mW</td>
+                    <td>101 mW</td>
+                </tr>
+                <tr>
+                    <td>Chrome 62</td>
+                    <td>B</td>
+                    <td>12:44:31</td>
+                    <td>66,675 mWh</td>
+                    <td>361 mW</td>
+                    <td>48 mW</td>
+                    <td>10 mW</td>
+                </tr>
+                <tr>
+                    <td>Opera 49</td>
+                    <td>C</td>
+                    <td>11:44:28</td>
+                    <td>68,624 mWh</td>
+                    <td>544 mW</td>
+                    <td>145 mW</td>
+                    <td>17 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 56</td>
+                    <td>D</td>
+                    <td>7:49:44</td>
+                    <td>59,805 mWh</td>
+                    <td>640 mW</td>
+                    <td>1,748 mW</td>
+                    <td>11 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 56</td>
+                    <td>A</td>
+                    <td>9:49:59</td>
+                    <td>64,147 mWh</td>
+                    <td>490 mW</td>
+                    <td>437 mW</td>
+                    <td>2 mW</td>
+                </tr>
+                <tr>
+                    <td>Edge 16</td>
+                    <td>B</td>
+                    <td>17:54:29</td>
+                    <td>66,015 mWh</td>
+                    <td>167 mW</td>
+                    <td>28 mW</td>
+                    <td>57 mW</td>
+                </tr>
+                <tr>
+                    <td>Chrome 62</td>
+                    <td>C</td>
+                    <td>12:50:37</td>
+                    <td>66,637 mWh</td>
+                    <td>424 mW</td>
+                    <td>61 mW</td>
+                    <td>23 mW</td>
+                </tr>
+                <tr>
+                    <td>Opera 49</td>
+                    <td>D</td>
+                    <td>11:04:10</td>
+                    <td>63,300 mWh</td>
+                    <td>561 mW</td>
+                    <td>103 mW</td>
+                    <td>9 mW</td>
+                </tr>
+                <tr>
+                    <td>Opera 49</td>
+                    <td>A</td>
+                    <td>11:56:07</td>
+                    <td>66,465 mWh</td>
+                    <td>472 mW</td>
+                    <td>69 mW</td>
+                    <td>15 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 56</td>
+                    <td>B</td>
+                    <td>9:56:29</td>
+                    <td>67,740 mWh</td>
+                    <td>490 mW</td>
+                    <td>558 mW</td>
+                    <td>20 mW</td>
+                </tr>
+                <tr>
+                    <td>Edge 16</td>
+                    <td>C</td>
+                    <td>15:58:30</td>
+                    <td>67,207 mWh</td>
+                    <td>185 mW</td>
+                    <td>30 mW</td>
+                    <td>52 mW</td>
+                </tr>
+                <tr>
+                    <td>Chrome 62</td>
+                    <td>D</td>
+                    <td>12:07:38</td>
+                    <td>67,612 mWh</td>
+                    <td>488 mW</td>
+                    <td>73 mW</td>
+                    <td>10 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 57</td>
+                    <td>A</td>
+                    <td>9:14:27</td>
+                    <td>63,885 mWh</td>
+                    <td>507 mW</td>
+                    <td>559 mW</td>
+                    <td>1 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 57</td>
+                    <td>B</td>
+                    <td>9:16:22</td>
+                    <td>64,958 mWh</td>
+                    <td>559 mW</td>
+                    <td>1,506 mW</td>
+                    <td>9 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 57</td>
+                    <td>C</td>
+                    <td>8:57:54</td>
+                    <td>63,451 mWh</td>
+                    <td>570 mW</td>
+                    <td>1,594 mW</td>
+                    <td>8 mW</td>
+                </tr>
+                <tr>
+                    <td>Firefox 57</td>
+                    <td>D</td>
+                    <td>8:24:30</td>
+                    <td>61,493 mWh</td>
+                    <td>660 mW</td>
+                    <td>1,432 mW</td>
+                    <td>9 mW</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Normalized</h3>
+        <p>Here, the normalization factor is a ratio of the laptop battery's design capacity vs the actual energy consumed before the laptop shutdown.</p>
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th title="Field #1">Laptop</th>
+                    <th title="Field #2">Browser</th>
+                    <th title="Field #3">Energy</th>
+                    <th title="Field #4">Normalization Factor</th>
+                    <th title="Field #5">Normalized Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>Chrome 62</td>
+                    <td align="right">65581</td>
+                    <td align="right">1.050639667</td>
+                    <td>12:46:21</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Opera 49</td>
+                    <td align="right">63075</td>
+                    <td align="right">1.092382085</td>
+                    <td>12:12:46</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Firefox 56</td>
+                    <td align="right">65370</td>
+                    <td align="right">1.054030901</td>
+                    <td>9:43:22</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Edge 16</td>
+                    <td align="right">66008</td>
+                    <td align="right">1.043843171</td>
+                    <td>14:08:44</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Edge 16</td>
+                    <td align="right">65872</td>
+                    <td align="right">1.0459983</td>
+                    <td>17:31:31</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Chrome 62</td>
+                    <td align="right">66675</td>
+                    <td align="right">1.033400825</td>
+                    <td>13:10:03</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Opera 49</td>
+                    <td align="right">68624</td>
+                    <td align="right">1.004051061</td>
+                    <td>11:47:19</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Firefox 56</td>
+                    <td align="right">59805</td>
+                    <td align="right">1.152111028</td>
+                    <td>9:01:11</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Firefox 56</td>
+                    <td align="right">64147</td>
+                    <td align="right">1.074126615</td>
+                    <td>10:33:43</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Edge 16</td>
+                    <td align="right">66015</td>
+                    <td align="right">1.043732485</td>
+                    <td>18:41:28</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Chrome 62</td>
+                    <td align="right">66637</td>
+                    <td align="right">1.033990126</td>
+                    <td>13:16:49</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Opera 49</td>
+                    <td align="right">63300</td>
+                    <td align="right">1.08849921</td>
+                    <td>12:02:57</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Opera 49</td>
+                    <td align="right">66465</td>
+                    <td align="right">1.036665914</td>
+                    <td>12:22:22</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Firefox 56</td>
+                    <td align="right">67740</td>
+                    <td align="right">1.017153823</td>
+                    <td>10:06:43</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Edge 16</td>
+                    <td align="right">67207</td>
+                    <td align="right">1.025220587</td>
+                    <td>16:22:40</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Chrome 62</td>
+                    <td align="right">67612</td>
+                    <td align="right">1.019079453</td>
+                    <td>12:21:31</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Firefox 57</td>
+                    <td align="right">63885</td>
+                    <td align="right">1.078531737</td>
+                    <td>9:58:00</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Firefox 57</td>
+                    <td align="right">64958</td>
+                    <td align="right">1.060716155</td>
+                    <td>9:50:09</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Firefox 57</td>
+                    <td align="right">63451</td>
+                    <td align="right">1.085908812</td>
+                    <td>9:44:07</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>Firefox 57</td>
+                    <td align="right">61493</td>
+                    <td align="right">1.120485258</td>
+                    <td>9:25:17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
