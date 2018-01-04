@@ -10,12 +10,11 @@
         <h1 class="title">Browser efficiency comparison - Fullscreen Video</h1>
         <h1 class="subtitle">Windows 10 Fall Creator's Update</h1>
         <h2>Methodology summary</h2>
-        <p>The Microsoft Edge team measured the time it took three identical Surface Book laptops to run fully through their batteries while streaming HTML5 video in fullscreen.</p>
-        <p> The test was done on three Surface Books running build 16299 and connected to the Internet through Wifi.</p>
+        <p>The Microsoft Edge team measured the time it took identical Surface Book laptops to run fully through their batteries while streaming HTML5 video in fullscreen.</p>
+        <p> The test was done with Windows build 16299 and connected to the Internet through Wifi, and multiple samples were taken.</p>
         <h2>Results</h2>
-        <p>Microsoft Edge lasted 79% longer than Firefox, 29% longer than Chrome, and 40% longer than Opera in this test.</p>
-        <p>Additional numbers were generated to control for battery health and to reflect what the performance might have looked like if the battery run-down had consumed the battery design capacity of the device. This was used as a gut-check to ensure that
-            one browser wouldn't significantly outperform another in conditions where battery health had deteriorated.</p><img src="rundown-results.png" width="744" height="414" />
+        <p>On average, Microsoft Edge lasted 79% longer than Firefox, 29% longer than Chrome, and 40% longer than Opera in this test.  During the <a href="https://www.youtube.com/watch?v=9NC_4m1oMIY">recorded test<a/>, Microsoft Edge lasted 63% longer than Firefox and 19% longer than Chrome; Opera was not tested during the recorded test iteration.</p>
+        <p>Additional numbers were generated to control for battery health and to reflect what the performance might have looked like if the battery run-down had consumed the battery design capacity of the device. This was used as a gut-check to ensure that one browser wouldn't significantly outperform another in conditions where battery health had deteriorated.</p><img src="rundown-results.png" width="744" height="414" />
         <table class="resultsTable">
             <tr>
                 <td>Browser / Version</td>
@@ -84,8 +83,6 @@
             </tr>
         </table>
         <h3>Running the test</h3>
-        <p>While plugging into power, each browser was navigated to the <a target="_blank" href="./test">video test site.</a> The quality option was set to 720p, and the sync mechanism was used to start the videos simultaneously. All laptops were plugged
-            into the same power strip, and power was shut off as the video began.</p>
         <p>The laptops were allowed to play video until all of them had lost power. After the power had run down and the laptops had shut off, power was restored. Run-time and power consumption data was then collected by running "powercfg /spr" and opening the generated report.</p>
         <p>For the video test, all methodology was the same, except that the duration value was determined by examining the clock that was placed behind the laptops.</p>
 
