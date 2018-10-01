@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Browser efficiency comparison - Fullscreen Video</title>
+    <link type="text/css" rel="stylesheet" href="style-video.css" />
+</head>
+
+<body>
+    <div class="stage">
+        <h1 class="title">Browser efficiency comparison - Fullscreen Video</h1>
+        <h1 class="subtitle">Windows 10 October 2018 Update</h1>
+        <h2>Methodology summary</h2>
+        <p>The Microsoft Edge team measured the time it took identical Surface Book laptops to run fully through their batteries while streaming HTML5 video in fullscreen.</p>
+        <p> The test was done with Windows build 17763 and connected to the Internet through Wifi, and multiple samples were taken.</p>
+        <h2>Results</h2>
+        <p>On average, Microsoft Edge lasted 34% longer than Chrome.</p>
+        <h2>Methodology details</h2>
+        <h3>Computer setup</h3>
+        <p>The test was performed on three separate Surface Book laptops running the Windows 10 October 2018 Update (17763 release). A sample was taken for each browser on each laptop. These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+        <ul>
+            <li>Display brightness was set to 50%</li>
+            <li>Volume was set to mute</li>
+            <li>Location was disabled</li>
+            <li>Bluetooth was disabled</li>
+            <li>Quiet hours were enabled</li>
+            <li>Updates were temporarily disabled</li>
+            <li>Device was connected to a wireless network</li>
+            <li>Ambient light sensor was disabled</li>
+            <li>Defender was running normally and up to date</li>
+            <li>Device was physically unplugged and running on battery</li>
+            <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+            <li>Windows Update was temporarily disabled</li>
+            <li>The cache was cleared on each browser</li>
+        </ul>
+        <p>In order to collect precise power usage data, the <a href="../maximdriver/Maxim.zip">Maxim power driver</a> was installed onto each machine.</p>
+        <h3>Hardware</h3>
+        <table>
+            <tr>
+                <td>Processor</td>
+                <td>i5-6300U @ 2.4GHz</td>
+            </tr>
+            <tr>
+                <td>Memory</td>
+                <td>8G</td>
+            </tr>
+            <tr>
+                <td>Graphics</td>
+                <td>Intel HD Graphics 520</td>
+            </tr>
+        </table>
+        <h3>Running the test</h3>
+        <p>The laptops were allowed to play video until all of them had lost power. After the power had run down and the laptops had shut off, power was restored. Run-time and power consumption data was then collected by running "powercfg /spr" and opening the generated report.</p>
+        <p>For the video test, all methodology was the same, except that the duration value was determined by examining the clock that was placed behind the laptops.</p>
+
+        <h2>Result Details</h2>
+        <h3>Summary</h3>
+
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th title="Field #1">Browser</th>
+                    <th title="Field #2">Duration</th>
+                    <th title="Field #7">Edge Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Edge RS5</td>
+                    <td>16:02:50</td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>Chrome 69</td>
+                    <td>12:53:41</td>
+                    <td>Edge lasts 34% longer</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
