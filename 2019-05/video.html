@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Browser efficiency comparison - Fullscreen Video</title>
+    <link type="text/css" rel="stylesheet" href="style-video.css" />
+</head>
+
+<body>
+    <div class="stage">
+        <h1 class="title">Browser efficiency comparison - Fullscreen Video</h1>
+        <h1 class="subtitle">Windows 10 May 2019 Update</h1>
+        <h2>Methodology summary</h2>
+        <p>The Microsoft Edge team measured the time it took identical Surface Laptop 2 devices to run fully through their batteries while streaming HTML5 video in fullscreen.</p>
+        <p> The test was done with Windows build 18362 and connected to the Internet through Wifi, and multiple samples were taken.</p>
+        <h2>Results</h2>
+        <p>Microsoft Edge lasts up to 41% longer than Chrome.</p>
+        <p>Microsoft Edge lasts up to 92% longer than Firefox.</p>
+        <h2>Methodology details</h2>
+        <h3>Computer setup</h3>
+        <p>The test was performed on separate Surface Laptop 2 devices running the Windows 10 May 2019 Update. A sample was taken for each browser on each laptop. These computers were configured to the following settings, to increase consistency between measures and reduce tasks that may start during the measurement and interfere with the results, while still representing a realistic user setup:</p>
+        <ul>
+            <li>Display brightness was set to 50%</li>
+            <li>Volume was set to mute</li>
+            <li>Location was disabled</li>
+            <li>Bluetooth was disabled</li>
+            <li>Quiet hours were enabled</li>
+            <li>Updates were temporarily disabled</li>
+            <li>Device was connected to a wireless network</li>
+            <li>Ambient light sensor was disabled</li>
+            <li>Defender was running normally and up to date</li>
+            <li>Device was physically unplugged and running on battery</li>
+            <li>Windows Battery Saver mode was set to activate at 20% battery</li>
+            <li>Windows Update was temporarily disabled</li>
+            <li>The cache was cleared on each browser</li>
+        </ul>
+        <h3>Hardware</h3>
+        <table>
+            <tr>
+                <td>Processor</td>
+                <td>Intel Core i5-8250U @ 1.6GHz</td>
+            </tr>
+            <tr>
+                <td>Memory</td>
+                <td>8 GB DDR3L SDRAM</td>
+            </tr>
+            <tr>
+                <td>Graphics</td>
+                <td>Integrated Intel UHD Graphics 620</td>
+            </tr>
+        </table>
+        <h3>Running the test</h3>
+        <p>The laptops were allowed to play video until all of them had lost power. After the power had run down and the laptops had shut off, power was restored. Run-time and power consumption data was then collected by running "powercfg /spr" and opening the generated report.</p>
+
+        <h2>Result Details</h2>
+        <h3>Summary</h3>
+
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th title="Field #1">Browser</th>
+                    <th title="Field #2">Duration</th>
+                    <th title="Field #7">Edge Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Edge 18.18362</td>
+                    <td>18:54:46</td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>Chrome 74</td>
+                    <td>13:22:16</td>
+                    <td>Edge lasts 41% longer</td>
+                </tr>
+                <tr>
+                    <td>Firefox 66</td>
+                    <td>9:49:09</td>
+                    <td>Edge lasts 92% longer</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

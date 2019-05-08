@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Power Rundown Test</title>
+	<style type="text/css">
+		body {
+			font-family: Veranda, sans-serif;
+			font-size: 16px;
+		}
+		.main {
+			width: 50%;
+			min-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		h1 {
+			font-size: 32px;
+		}
+		.small {
+			font-size: 8px;
+			text-align: right;
+		}
+		.video-wrapper {
+			width: 100%;
+		}
+		#video-fullscreen {
+			display: flex;
+			vertical-align: middle;
+			width: 100%;
+		}
+		#video-main {
+			height: 100%;
+			width: 100%;
+			display: block;
+			margin-bottom: -2px;
+		}
+		#buttons {
+			text-align: right;
+			margin-top: 4px;
+		}
+		#buttons button {
+			border: none;
+			padding: 8px 22px;
+			font-size: 18px;
+			font-family: inherit;
+			background: #46e;
+			color: white;
+			font-weight: 600;
+			letter-spacing: 1px;
+			display: inline-block;
+		}
+		#buttons select {
+			border: none;
+			padding: 6px 46px 6px 16px;
+			font-size: 18px;
+			background: #46e;
+			color: white;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+		}
+		#select-wrapper {
+			position:relative
+		}
+		#select-wrapper::after {
+			content: '>';
+			color: white;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+			right: 8px;
+			top: -12px;
+			padding: 8px;
+			border-bottom: 2px solid white;
+			position: absolute;
+			pointer-events: none;
+			font-family: Consolas, monospace;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		#footer {
+			text-align: right;
+		}
+		#footer a {
+			display: inline-block;
+			text-transform: uppercase;
+			font-size: 0.8em;
+			text-decoration: none;
+			color: white;
+			background: black;
+			padding: 8px 12px 6px;
+			margin-bottom: 16px;
+			letter-spacing: 1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h1>Power Rundown Test</h1>
+		<div class="video-wrapper">
+			<div id="video-fullscreen">
+				<video controls loop id="video-main">
+					<source src="https://rundown.azureedge.net/videos/tears-of-steel-1080p-yt-stream.mp4"></source>
+				</video>
+			</div>
+			<div id="buttons">
+				<span id="select-wrapper">
+					<select name="format">
+					  <option value="https://rundown.azureedge.net/videos/tears-of-steel-1080p-yt-stream.mp4" selected>H.264/AAC 1080p</option> 
+					  <option value="https://rundown.azureedge.net/videos/tears-of-steel-720p-yt-stream.mp4">H.264/AAC 720p</option>
+					</select>
+				</span>
+				<button id="start">Start</button>
+				<button id="sync-start">Sync Start</button>
+			</div>
+		</div>
+		<div class="text">
+			<h2>Instructions</h2>
+			<p>
+				By default, the 1080P H.264 video is selected.  Use the drop-down to select a different format.
+			</p>
+			<p>
+				To go fullscreen and being playing immediately, press the Start button.  The video will loop until explicitly stopped.
+			</p>
+			<p>
+				In order to simultaneously begin playing on more than one machine, Sync Start is provided.  When this button is pressed, the video will go full screen and wait until the next even minute before starting the video.  For example, if it is 10:22:31 PM and the Sync Start button is pressed, the video will go full screen and begin playing at exactly 10:24:00.  The video will loop until explicitly stopped.
+			</p>
+
+		</div>
+		<div id="footer">
+			<a href="clock.html">Clock</a>
+			<p class="small">
+				v1.0.1
+			</p>
+		</div>
+	</div>
+
+	<script>
+		(() => {
+			const fullscreenEl = document.getElementById("video-fullscreen");
+			const videoEl = document.getElementById("video-main");
+			videoEl.controls = false;
+
+			function fullscreen () {
+				(
+					fullscreenEl.webkitRequestFullScreen ||
+					fullscreenEl.mozRequestFullScreen ||
+					fullscreenEl.msRequestFullscreen ||
+					fullscreenEl.requestFullscreen
+				).call(fullscreenEl);
+			}
+
+			function syncToNextEvenMin (cb) {
+				const now = new Date();
+				const startTime = new Date(
+					now.getFullYear(),
+					now.getMonth(),
+					now.getDate(),
+					now.getHours(),
+					now.getMinutes() + 2 - (now.getMinutes() % 2),
+					0,
+					0
+				);
+				const waitMs = startTime - now;
+				console.log(`Waiting until ${startTime} to play.`);
+				console.log(`Dellay for ${waitMs} milliseconds.`);
+
+				setTimeout(cb, waitMs);
+			}
+
+			function play () {
+				videoEl.play();
+
+				// Force media controls to be hidden when playing fullscreen in Edge.
+				if (window.navigator.userAgent.indexOf("Edge") > -1) {
+					setTimeout(() => {
+						videoEl.dispatchEvent(new KeyboardEvent("keydown", {
+							bubbles: true,
+							cancelable: true,
+							key: "T",
+							char: "T",
+							shiftKey: false
+						}));
+					}, 200);
+				}
+			}
+
+			document.getElementById("start").addEventListener("click", ev => {
+				ev.preventDefault();
+				fullscreen();
+				play();
+			});
+			document.getElementById("sync-start").addEventListener("click", ev => {
+				ev.preventDefault();
+				fullscreen();
+				syncToNextEvenMin(play)
+			});
+			document.querySelector("select[name='format']").addEventListener("change", ev => {
+				videoEl.setAttribute("src", ev.target.value);
+			});
+		})()
+	</script>
+</body>
+</html>
